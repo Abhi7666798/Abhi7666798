@@ -1,0 +1,26 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light text-bold">
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+   
+        <li class="nav-item active text-bold">
+          <a class="nav-link text-bold" [routerLink]="['list']">List </a>
+        </li>
+        <li class="nav-item text-bold">
+          <a class="nav-link text-bold" [routerLink]="['create']">Create</a>
+        </li>
+       
+      </ul>
+      
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-9 mx-auto">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+ 
+  </div>

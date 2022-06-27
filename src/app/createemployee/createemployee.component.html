@@ -1,0 +1,27 @@
+<form #employeeform="ngForm"   (ngSubmit)="saveemployee()" >
+<div class="card shadow-lg my-4">
+    <!--Name-->
+    <div class="card-heading">
+      <h2 class="card-title bg-primary text-light text-bold" style="font-family:Georgia, 'Times New Roman', Times, serif">Create Employee</h2>
+    </div>
+    <div class="card-body ">
+        <div class="formgroup" >
+                <label  for="name"     class="control-label">Full Name:</label>
+                <input id="name"  [class.is-invalid]="name.invalid && name.touched" #name="ngModel"  [(ngModel)]="data.name"  name="name" type="text" class="form-control"  required>
+                <span class="text-danger" *ngIf="name.invalid && name.touched" > full Name is required</span>
+            </div>
+        <div  class="formgroup" >
+            <label for="email">Email:</label>
+            <input id="email" [class.is-invalid]="email.invalid && email.touched" 
+            type="email" email="true"  #email="ngModel" name="email"
+             pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" class="form-control" [(ngModel)]="data.email" [required]="true">
+            <span class="text-danger" *ngIf="email.errors?.['required']" > Email is required</span>
+            <span class="text-danger" *ngIf="email.errors?.['pattern']  " > Email is invalid</span>
+    </div>
+    </div>
+    <div class="card-footer">
+        <button type="submit" class="btn btn-primary" [disabled]="employeeform.invalid">Save</button>
+      </div>
+</div>
+
+</form>
